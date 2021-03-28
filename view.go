@@ -19,14 +19,12 @@ func printMenue() {
 ******* Willkommen bei WER WIRD MILLIONÄR? *******
 ******* Das Quiz besteht aus 10 Fragen ***********
 ******* Pro Quiz können 2 Joker gewählt werden ***
-# 1. ADD ANOTHER BOOK IN LIBRARY
-# 2. REMOVE A BOOK FROM A LIBRARY
-# 3. CHECK AVAILABILITY
-# 4. LEND A BOOK
-# 5. RETURN A BOOK
-# 6. VIEW ALL BOOKS
-#
-# q. TERMINATE BOOK LIBRARY APP`)
+**************************************************
+# Übersicht Commands
+# a-d: Antwort auswählen
+# 5: 50/50 Joker auswählen
+# r: Retry Joker auswählen
+# q. Quiz beenden`)
 	fmt.Println(string(colorReset))
 
 	fmt.Println(string(colorRed), "test")
