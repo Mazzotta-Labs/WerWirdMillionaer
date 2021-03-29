@@ -8,6 +8,7 @@ import (
 	"math/rand"
 	"os"
 	"os/exec"
+	"runtime"
 	"strings"
 	"time"
 
@@ -17,7 +18,13 @@ import (
 var isQuizMode = false
 
 func clearTerminal() {
-	c := exec.Command("clear")
+	var c *exec.Cmd
+	if runtime.GOOS == "windows" {
+		c = exec.Command("cmd", "/c", "cls")
+	} else if runtime.GOOS == "linux" {
+		c = exec.Command("clear")
+	}
+
 	c.Stdout = os.Stdout
 	c.Run()
 }
@@ -70,6 +77,7 @@ func parseCommand(input string) {
 		if isQuizMode {
 			break
 		}
+		clearTerminal()
 
 		isQuizMode = true
 		printQuizStarted()
@@ -78,17 +86,20 @@ func parseCommand(input string) {
 		if !isQuizMode {
 			break
 		}
+		clearTerminal()
 
 		checkAnswer(input)
 	case "r":
 		if !isQuizMode || retryJokerUsed > 0 {
 			break
 		}
+		clearTerminal()
 		useRetryJoker()
 	case "5":
 		if !isQuizMode || fiftyChangeJokerUsed {
 			break
 		}
+		clearTerminal()
 		use50ChanceJoker50()
 	case "q":
 		clearTerminal()
@@ -132,6 +143,7 @@ func checkAnswer(input string) {
 		if retryJokerUsed == 1 {
 			printNewChance()
 			retryJokerUsed++
+			askQuestion()
 			return
 		}
 		printGoodLuckNextTime()
@@ -165,6 +177,7 @@ func use50ChanceJoker50() {
 func useRetryJoker() {
 	printRetryJokerUsed()
 	retryJokerUsed++
+	askQuestion()
 }
 
 func askForCommand() string {

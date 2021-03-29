@@ -22,13 +22,9 @@ func printMenue() {
 ********** Übersicht aller Commands **************
 s       : Quiz starten
 a,b,c,d : Antwort auswählen
-n       : Nächste Frage
-5       : 50/50 Joker auswählen
-r       : Retry Joker auswählen
+5       : 50/50 Joker auswählen (2 falsche Antworten werden ausgeblendet)
+r       : Retry Joker auswählen (Auf Nummer sicher gehen, bei falscher Antwort bekommt man noch eine Chance)
 q       : Quiz beenden`)
-	fmt.Println(string(colorReset))
-
-	fmt.Println(string(colorRed), "test")
 	fmt.Println(string(colorReset))
 }
 
