@@ -2,45 +2,45 @@
   "questions": [
     {
       "id": "1",
-      "question": "Question 01 ?",
+      "question": "Wer kann vielleicht schwimmen, aber nicht fliegen?",
       "answers": [
         {
-          "text": "Answer 01",
+          "text": "Stockenten",
           "correct": false
         },
         {
-          "text": "Answer 02",
+          "text": "Pfeifenten",
           "correct": false
         },
         {
-          "text": "Answer 03",
+          "text": "Krickenten",
+          "correct": false
+        },
+        {
+          "text": "Studenten",
           "correct": true
-        },
-        {
-          "text": "Answer 04",
-          "correct": false
         }
       ],
       "difficulty": 1
     },
     {
       "id": "2",
-      "question": "Question 02 ?",
+      "question": "Wer weiß wohl am ehesten, was mit 'Jumpsuit' gemeint ist?",
       "answers": [
         {
-          "text": "Answer 01",
-          "correct": false
-        },
-        {
-          "text": "Answer 02",
+          "text": "Modekenner",
           "correct": true
         },
         {
-          "text": "Answer 03",
+          "text": "Börsen-Spekulanten",
           "correct": false
         },
         {
-          "text": "Answer 04",
+          "text": "Stabhochspringer",
+          "correct": false
+        },
+        {
+          "text": "Autoverkäufer",
           "correct": false
         }
       ],
@@ -48,23 +48,322 @@
     },
     {
       "id": "3",
-      "question": "Question 03 ?",
+      "question": "Was bedeutet der Name der italienischen Nachspeise 'Tiramisu' wörtlich?",
       "answers": [
         {
-          "text": "Answer 01",
+          "text": "süss und köstlich",
           "correct": true
         },
         {
-          "text": "Answer 02",
+          "text": "zieh mich hoch",
           "correct": false
         },
         {
-          "text": "Answer 03",
+          "text": "das macht dick",
           "correct": false
         },
         {
-          "text": "Answer 04",
+          "text": "Leckermäulchen",
           "correct": false
+        }
+      ],
+      "difficulty": 2
+    },
+    {
+      "id": "4",
+      "question": "Was hat man redensartlich, wenn man häufig das Klo aufsuchen muss?",
+      "answers": [
+        {
+          "text": "Grundschülerlunge",
+          "correct": false
+        },
+        {
+          "text": "Konfirmandenblase",
+          "correct": true
+        },
+        {
+          "text": "Teenagerherz",
+          "correct": false
+        },
+        {
+          "text": "Abiturientenniere",
+          "correct": false
+        }
+      ],
+      "difficulty": 2
+    },
+    {
+      "id": "5",
+      "question": "Welcher Sport kennt einen Quarterback?",
+      "answers": [
+        {
+          "text": "American Football",
+          "correct": true
+        },
+        {
+          "text": "Rugby",
+          "correct": false
+        },
+        {
+          "text": "Baseball",
+          "correct": false
+        },
+        {
+          "text": "Basketball",
+          "correct": false
+        }
+      ],
+      "difficulty": 2
+    },
+    {
+      "id": "6",
+      "question": "Ein zylindrisches Gefäß in dem Speisen gekocht werden – oder kurz:",
+      "answers": [
+        {
+          "text": "auf Lauf",
+          "correct": false
+        },
+        {
+          "text": "ra Gout",
+          "correct": false
+        },
+        {
+          "text": "gu Lasch",
+          "correct": false
+        },
+        {
+          "text": "ein Topf",
+          "correct": true
+        }
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": "7",
+      "question": "Was findet man bei Autos meist in den Varianten 'gleichlaufend' oder 'gegenläufig'?",
+      "answers": [
+        {
+          "text": "Tankanzeige",
+          "correct": false
+        },
+        {
+          "text": "Rückbank",
+          "correct": false
+        },
+        {
+          "text": "Scheibenwischer",
+          "correct": true
+        },
+        {
+          "text": "Schneeketten",
+          "correct": false
+        }
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": "8",
+      "question": "Welcher Buchstabe kam in der Entstehungsgeschichte unseres heute gebräuchlichen Alphabets erst im Mittelalter hinzu?",
+      "answers": [
+        {
+          "text": "V",
+          "correct": false
+        },
+        {
+          "text": "D",
+          "correct": false
+        },
+        {
+          "text": "C",
+          "correct": false
+        },
+        {
+          "text": "W",
+          "correct": true
+        }
+      ],
+      "difficulty": 3
+    },
+    {
+      "id": "9",
+      "question": "Welche Pflanzen zählen zur selben Familie und sind für manchen Hobbygärtner zum Verwechseln ähnlich?",
+      "answers": [
+        {
+          "text": "Hibiskus und Krokus",
+          "correct": false
+        },
+        {
+          "text": "Hortensie und Azalee",
+          "correct": false
+        },
+        {
+          "text": "Eibe und Ulme",
+          "correct": false
+        },
+        {
+          "text": "Lavendel und Rosmarin",
+          "correct": true
+        }
+      ],
+      "difficulty": 3
+    },
+    {
+      "id": "10",
+      "question": "Bei welchen beiden Staaten findet man im Ländernamen wie auch im Namen der Hauptstadt keinen anderen Vokal als das 'A'?",
+      "answers": [
+        {
+          "text": "Japan und Madagaskar",
+          "correct": false
+        },
+        {
+          "text": "Kanada und Bahamas",
+          "correct": false
+        },
+        {
+          "text": "Ghana und Kasachstan",
+          "correct": true
+        },
+        {
+          "text": "Katar und Tschad",
+          "correct": false
+        }
+      ],
+      "difficulty": 3
+    },
+    {
+      "id": "11",
+      "question": "Wer muss beim Urlaub im Schwarzwald grundsätzlich die sogenannte Zwei-Meter-Regel beachten?",
+      "answers": [
+        {
+          "text": "Nichtschwimmer",
+          "correct": false
+        },
+        {
+          "text": "Hundebesitzer",
+          "correct": false
+        },
+        {
+          "text": "Mountainbiker",
+          "correct": true
+        },
+        {
+          "text": "Wohnmobilfahrer",
+          "correct": false
+        }
+      ],
+      "difficulty": 3
+    },
+    {
+      "id": "12",
+      "question": "Der Bonobo ist auch bekannt als ...?",
+      "answers": [
+        {
+          "text": "Langarmgibbon",
+          "correct": false
+        },
+        {
+          "text": "Riesengorilla",
+          "correct": false
+        },
+        {
+          "text": "Zwergschimpanse",
+          "correct": true
+        },
+        {
+          "text": "Wald Orang Utan",
+          "correct": false
+        }
+      ],
+      "difficulty": 2
+    },
+    {
+      "id": "13",
+      "question": "Welche Staatsreligion hat die Türkei?",
+      "answers": [
+        {
+          "text": "Islam",
+          "correct": true
+        },
+        {
+          "text": "keine",
+          "correct": false
+        },
+        {
+          "text": "Orthodoxes Christentum",
+          "correct": false
+        },
+        {
+          "text": "Katholizismus",
+          "correct": false
+        }
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": "14",
+      "question": "Wie nennen die Franzosen ihr Land?",
+      "answers": [
+        {
+          "text": "Frankrige",
+          "correct": false
+        },
+        {
+          "text": "Franse",
+          "correct": false
+        },
+        {
+          "text": "Francia",
+          "correct": false
+        },
+        {
+          "text": "France",
+          "correct": true
+        }
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": "15",
+      "question": "An welchem Meer liegt Vietnam?",
+      "answers": [
+        {
+          "text": "Am Südchinesischen Meer",
+          "correct": true
+        },
+        {
+          "text": "Am roten Meer",
+          "correct": false
+        },
+        {
+          "text": "Am toten Meer",
+          "correct": false
+        },
+        {
+          "text": "Am Golf von Bengalen",
+          "correct": false
+        }
+      ],
+      "difficulty": 2
+    },
+    {
+      "id": "15",
+      "question": "Was für einen Ton erzeugen die herkömmlichen Musikinstrumente ?",
+      "answers": [
+        {
+          "text": "einen synthetisch reinen",
+          "correct": false
+        },
+        {
+          "text": "einen physikalisch reinen",
+          "correct": false
+        },
+        {
+          "text": "rein faktisch keinen",
+          "correct": false
+        },
+        {
+          "text": "keinen physikalisch reinen",
+          "correct": true
         }
       ],
       "difficulty": 3
