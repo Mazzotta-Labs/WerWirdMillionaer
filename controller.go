@@ -10,6 +10,8 @@ import (
 	"os/exec"
 	"strings"
 	"time"
+
+	"github.com/thoas/go-funk"
 )
 
 var isQuizMode = false
@@ -79,9 +81,15 @@ func parseCommand(input string) {
 
 		checkAnswer(input)
 	case "r":
-		break
+		if !isQuizMode || retryJokerUsed > 0 {
+			break
+		}
+		useRetryJoker()
 	case "5":
-		break
+		if !isQuizMode || fiftyChangeJokerUsed {
+			break
+		}
+		use50ChanceJoker50()
 	case "q":
 		clearTerminal()
 		ShutDown()
@@ -89,11 +97,9 @@ func parseCommand(input string) {
 }
 
 func askQuestion() {
-	currentLevel++
-
-	printAskQuestionTitle(currentLevel)
 	currentQuestion := questionCatalog[currentLevel]
 
+	printAskQuestionTitle(currentLevel + 1)
 	printAskQuestion(currentQuestion)
 }
 
@@ -114,11 +120,51 @@ func checkAnswer(input string) {
 
 	if currentQuestion.Answers[index].Correct {
 		printCorrectAnswer()
-		askQuestion()
+		currentLevel++
+		if currentLevel < 10 {
+			askQuestion()
+		} else {
+			printSuccess()
+			ShutDown()
+		}
 	} else {
 		printWrongAnswer()
+		if retryJokerUsed == 1 {
+			printNewChance()
+			retryJokerUsed++
+			return
+		}
+		printGoodLuckNextTime()
 		ShutDown()
 	}
+}
+
+func use50ChanceJoker50() {
+	currentQuestion := questionCatalog[currentLevel]
+	wrongAnswers := funk.Filter(currentQuestion.Answers, func(a Answer) bool {
+		return !a.Correct
+	}).([]Answer)
+
+	randomIndex := funk.RandomInt(0, 2)
+	for i := 0; i < len(wrongAnswers); i++ {
+		if i != randomIndex {
+			wrongAnswers[i].Text = ""
+		}
+	}
+
+	for i, answer := range currentQuestion.Answers {
+		if !answer.Correct && !funk.Contains(wrongAnswers, answer) {
+			currentQuestion.Answers[i].Text = ""
+		}
+	}
+	print50ChanceJokerUsed()
+	fiftyChangeJokerUsed = true
+	askQuestion()
+}
+
+func useRetryJoker() {
+	printRetryJokerUsed()
+	retryJokerUsed++
 }
 
 func askForCommand() string {

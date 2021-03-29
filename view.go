@@ -10,7 +10,6 @@ const (
 	colorGreen  = "\033[32m"
 	colorYellow = "\033[33m"
 	colorBlue   = "\033[34m"
-	colorWhite  = "\033[37m"
 )
 
 func printMenue() {
@@ -21,12 +20,12 @@ func printMenue() {
 ******* Pro Quiz können 2 Joker gewählt werden ***
 **************************************************
 ********** Übersicht aller Commands **************
-s      : Quiz starten
-a,b,c,d: Antwort auswählen
-n      : Nächste Frage
-5      : 50/50 Joker auswählen
-r      : Retry Joker auswählen
-q      : Quiz beenden`)
+s       : Quiz starten
+a,b,c,d : Antwort auswählen
+n       : Nächste Frage
+5       : 50/50 Joker auswählen
+r       : Retry Joker auswählen
+q       : Quiz beenden`)
 	fmt.Println(string(colorReset))
 
 	fmt.Println(string(colorRed), "test")
@@ -71,14 +70,40 @@ func printAskQuestion(question Question) {
 
 func printCorrectAnswer() {
 	fmt.Println(string(colorGreen), "Die Anwort war richtig!")
-	fmt.Println(string(colorGreen), "Nächste Frage..")
+	if currentLevel < 9 {
+		fmt.Println(string(colorGreen), "Nächste Frage..")
+	}
 	fmt.Println(string(colorReset))
 }
 
 func printWrongAnswer() {
 	fmt.Println(string(colorRed), "Die Anwort war leider falsch.")
+	fmt.Println(string(colorReset))
+}
+
+func printGoodLuckNextTime() {
 	fmt.Println(string(colorYellow), "Viel Glück beim nächsten Mal!")
 	fmt.Println(string(colorReset))
+}
+
+func print50ChanceJokerUsed() {
+	fmt.Println(string(colorGreen), "Der 50 / 50 Joker wurde eingesetzt!")
+	fmt.Println(string(colorReset))
+}
+
+func printRetryJokerUsed() {
+	fmt.Println(string(colorGreen), "Der Retry Joker wurde eingesetzt!")
+	fmt.Println(string(colorReset))
+}
+
+func printNewChance() {
+	fmt.Println(string(colorGreen), "Neuer Versuch..")
+	fmt.Println(string(colorReset))
+}
+
+func printSuccess() {
+	fmt.Println(string(colorGreen), "Gratulation! Alle 10 Fragen wurden richtig beantwortet.")
+	fmt.Println(" Jetzt steht der Million nichts mehr im Wege!")
 }
 
 func printExitQuiz() {

@@ -7,6 +7,8 @@ var mediumQuestions []Question
 var hardQuestions []Question
 var questionCatalog []Question
 var currentLevel int = 0
+var fiftyChangeJokerUsed = false
+var retryJokerUsed int = 0
 
 type Questions struct {
 	Questions []Question
