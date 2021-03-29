@@ -9,6 +9,7 @@ import (
 	"os"
 	"os/exec"
 	"strings"
+	"time"
 )
 
 func clearTerminal() {
@@ -37,15 +38,17 @@ func startQuiz() {
 
 func prepareQuestionsForQuiz() {
 	allQuestions := readJsonFile()
-	shuffledQuestion := shuffleQuestions(allQuestions.Questions)
+	shuffledQuestions := shuffleQuestions(allQuestions.Questions)
 
-	for i := 0; i < len(shuffledQuestion); i++ {
-		AddQuestionByDifficulty(shuffledQuestion[i])
+	for i := 0; i < len(shuffledQuestions); i++ {
+		AddQuestionByDifficulty(shuffledQuestions[i])
 	}
+
 	SetupQuestionsForQuiz()
 }
 
 func shuffleQuestions(questions []Question) []Question {
+	rand.Seed(time.Now().UnixNano())
 	rand.Shuffle(len(questions), func(i, j int) {
 		questions[i], questions[j] = questions[j], questions[i]
 	})
