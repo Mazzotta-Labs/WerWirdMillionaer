@@ -12,6 +12,8 @@ import (
 	"time"
 )
 
+var isQuizMode = false
+
 func clearTerminal() {
 	c := exec.Command("clear")
 	c.Stdout = os.Stdout
@@ -61,39 +63,28 @@ func executeCommand() {
 }
 
 func parseCommand(input string) {
-	switch {
-	case input == "s":
+	switch strings.ToLower(input) {
+	case "s":
+		if isQuizMode {
+			break
+		}
+
+		isQuizMode = true
 		printQuizStarted()
 		askQuestion()
+	case "a", "b", "c", "d":
+		if !isQuizMode {
+			break
+		}
+
+		checkAnswer(input)
+	case "r":
 		break
-	case input == "a" || input == "b" || input == "c" || input == "d":
+	case "5":
 		break
-	case input == "":
-		break
-	case input == "":
-		break
-	case input == "":
-		break
-	case input == "":
-		break
-	case input == "":
-		break
-	case input == "":
-		break
-	case input == "":
-		break
-	case input == "":
-		break
-	case input == "":
-		break
-	case input == "":
-		break
-	case input == "":
-		break
-	case input == "q":
+	case "q":
 		clearTerminal()
-		printExitQuiz()
-		os.Exit(0)
+		ShutDown()
 	}
 }
 
@@ -104,6 +95,30 @@ func askQuestion() {
 	currentQuestion := questionCatalog[currentLevel]
 
 	printAskQuestion(currentQuestion)
+}
+
+func checkAnswer(input string) {
+	currentQuestion := questionCatalog[currentLevel]
+	var index int
+
+	switch strings.ToLower(input) {
+	case "a":
+		index = 0
+	case "b":
+		index = 1
+	case "c":
+		index = 2
+	case "d":
+		index = 3
+	}
+
+	if currentQuestion.Answers[index].Correct {
+		printCorrectAnswer()
+		askQuestion()
+	} else {
+		printWrongAnswer()
+		ShutDown()
+	}
 }
 
 func askForCommand() string {

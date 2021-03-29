@@ -1,5 +1,7 @@
 package main
 
+import "os"
+
 var easyQuestions []Question
 var mediumQuestions []Question
 var hardQuestions []Question
@@ -45,15 +47,7 @@ func SetupQuestionsForQuiz() {
 	questionCatalog = append(questionCatalog, hardQuestions...)
 }
 
-// func GetQuestionsByDifficulty(difficulty int) []Question {
-// 	switch difficulty {
-// 	case 1:
-// 		return easyQuestions
-// 	case 2:
-// 		return mediumQuestions
-// 	case 3:
-// 		return hardQuestions
-// 	default:
-// 		return nil
-// 	}
-// }
+func ShutDown() {
+	printExitQuiz()
+	os.Exit(0)
+}

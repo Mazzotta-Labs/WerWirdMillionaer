@@ -69,6 +69,18 @@ func printAskQuestion(question Question) {
 	fmt.Println(string(colorReset))
 }
 
+func printCorrectAnswer() {
+	fmt.Println(string(colorGreen), "Die Anwort war richtig!")
+	fmt.Println(string(colorGreen), "Nächste Frage..")
+	fmt.Println(string(colorReset))
+}
+
+func printWrongAnswer() {
+	fmt.Println(string(colorRed), "Die Anwort war leider falsch.")
+	fmt.Println(string(colorYellow), "Viel Glück beim nächsten Mal!")
+	fmt.Println(string(colorReset))
+}
+
 func printExitQuiz() {
 	fmt.Println(string(colorYellow), "Quiz wurde beendet!")
 	fmt.Println(string(colorReset))
