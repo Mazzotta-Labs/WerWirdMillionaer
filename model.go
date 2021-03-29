@@ -1,5 +1,9 @@
 package main
 
+var easyQuestions []Question
+var mediumQuestions []Question
+var hardQuestions []Question
+
 type Questions struct {
 	Questions []Question
 }
@@ -14,4 +18,34 @@ type Question struct {
 type Answer struct {
 	Text    string `json:"text"`
 	Correct bool   `json:"correct"`
+}
+
+func AddQuestionByDifficulty(question Question) {
+	switch question.Difficulty {
+	case 1:
+		if len(easyQuestions) < 3 {
+			easyQuestions = append(easyQuestions, question)
+		}
+	case 2:
+		if len(mediumQuestions) < 4 {
+			mediumQuestions = append(mediumQuestions, question)
+		}
+	case 3:
+		if len(hardQuestions) < 3 {
+			hardQuestions = append(hardQuestions, question)
+		}
+	}
+}
+
+func GetQuestionsByDifficulty(difficulty int) []Question {
+	switch difficulty {
+	case 1:
+		return easyQuestions
+	case 2:
+		return mediumQuestions
+	case 3:
+		return hardQuestions
+	default:
+		return nil
+	}
 }

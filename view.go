@@ -20,7 +20,7 @@ func printMenue() {
 ******* Das Quiz besteht aus 10 Fragen ***********
 ******* Pro Quiz können 2 Joker gewählt werden ***
 **************************************************
-**** Übersicht Commands ****
+********** Übersicht aller Commands **************
 s  : Quiz starten
 a-d: Antwort auswählen
 n  : Nächste Frage
@@ -35,6 +35,11 @@ q  : Quiz beenden`)
 
 func printStartQuiz() {
 	fmt.Println(string(colorYellow), "Starte Quiz mit 's'")
+	fmt.Println(string(colorReset))
+}
+
+func printQuizStarted() {
+	fmt.Println(string(colorBlue), "Quiz wurde gestartet, viel Glück!")
 	fmt.Println(string(colorReset))
 }
 
