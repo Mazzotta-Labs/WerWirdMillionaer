@@ -3,6 +3,8 @@ package main
 var easyQuestions []Question
 var mediumQuestions []Question
 var hardQuestions []Question
+var questionCatalog []Question
+var currentLevel int = 0
 
 type Questions struct {
 	Questions []Question
@@ -37,15 +39,21 @@ func AddQuestionByDifficulty(question Question) {
 	}
 }
 
-func GetQuestionsByDifficulty(difficulty int) []Question {
-	switch difficulty {
-	case 1:
-		return easyQuestions
-	case 2:
-		return mediumQuestions
-	case 3:
-		return hardQuestions
-	default:
-		return nil
-	}
+func SetupQuestionsForQuiz() {
+	questionCatalog = append(questionCatalog, easyQuestions...)
+	questionCatalog = append(questionCatalog, mediumQuestions...)
+	questionCatalog = append(questionCatalog, hardQuestions...)
 }
+
+// func GetQuestionsByDifficulty(difficulty int) []Question {
+// 	switch difficulty {
+// 	case 1:
+// 		return easyQuestions
+// 	case 2:
+// 		return mediumQuestions
+// 	case 3:
+// 		return hardQuestions
+// 	default:
+// 		return nil
+// 	}
+// }

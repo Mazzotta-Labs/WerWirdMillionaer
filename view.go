@@ -21,12 +21,12 @@ func printMenue() {
 ******* Pro Quiz können 2 Joker gewählt werden ***
 **************************************************
 ********** Übersicht aller Commands **************
-s  : Quiz starten
-a-d: Antwort auswählen
-n  : Nächste Frage
-5  : 50/50 Joker auswählen
-r  : Retry Joker auswählen
-q  : Quiz beenden`)
+s      : Quiz starten
+a,b,c,d: Antwort auswählen
+n      : Nächste Frage
+5      : 50/50 Joker auswählen
+r      : Retry Joker auswählen
+q      : Quiz beenden`)
 	fmt.Println(string(colorReset))
 
 	fmt.Println(string(colorRed), "test")
@@ -40,6 +40,32 @@ func printStartQuiz() {
 
 func printQuizStarted() {
 	fmt.Println(string(colorBlue), "Quiz wurde gestartet, viel Glück!")
+	fmt.Println(string(colorReset))
+}
+
+func printAskQuestionTitle(number int) {
+	fmt.Println(string(colorBlue), "Frage Nr. ", number)
+	fmt.Println(string(colorReset))
+}
+
+func printAskQuestion(question Question) {
+	fmt.Println(string(colorYellow), question.Question)
+	fmt.Println(string(colorBlue))
+
+	for i := 0; i < len(question.Answers); i++ {
+		answer := question.Answers[i]
+		switch i {
+		case 0:
+			fmt.Println("A: ", answer.Text)
+		case 1:
+			fmt.Println("B: ", answer.Text)
+		case 2:
+			fmt.Println("C: ", answer.Text)
+		case 3:
+			fmt.Println("D: ", answer.Text)
+		}
+	}
+
 	fmt.Println(string(colorReset))
 }
 

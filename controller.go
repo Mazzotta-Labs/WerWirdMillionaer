@@ -3,7 +3,6 @@ package main
 import (
 	"bufio"
 	"encoding/json"
-	"fmt"
 	"io/ioutil"
 	"log"
 	"math/rand"
@@ -25,72 +24,25 @@ func readJsonFile() Questions {
 	_ = json.Unmarshal([]byte(file), &data)
 
 	return data
-
-	//for i := 0; i < len(data.Questions); i++ {
-	// fmt.Println("Frage: ", i+1)
-	// fmt.Println("ID: ", data.Questions[i].Id)
-	// fmt.Println("Text:", data.Questions[i].Question)
-	// fmt.Println("Difficulty:", data.Questions[i].Difficulty)
-
-	//	for y := 0; y < len(data.Questions[i].Answers); y++ {
-	//answer := data.Questions[i].Answers[y]
-
-	// fmt.Println("Antwort: ", y+1)
-	// fmt.Println("Text: ", answer.Text)
-	// fmt.Println("Korrekt:", answer.Correct)
-	//	}
-	//}
 }
 
 func startQuiz() {
 	printStartQuiz()
-	prepareQuestionForQuiz()
+	prepareQuestionsForQuiz()
 
 	for {
 		executeCommand()
 	}
-
-	// command := askForCommand()
-	// if command != "s" {
-	// 	os.Exit(3)
-	// }
-	// fmt.Println("Frage Nummer 01")
 }
 
-func prepareQuestionForQuiz() {
-
+func prepareQuestionsForQuiz() {
 	allQuestions := readJsonFile()
-
-	// for i := 0; i < len(allQuestions.Questions); i++ {
-	// 	test := allQuestions.Questions[i]
-	// 	fmt.Println(test.Id)
-	// }
-
 	shuffledQuestion := shuffleQuestions(allQuestions.Questions)
-
-	// for i := 0; i < len(shuffledQuestion); i++ {
-	// 	test2 := shuffledQuestion[i]
-	// 	fmt.Println(test2.Id)
-	// }
-
-	// rand.Shuffle(allQuestions.Questions)
-	// easyQuestions := make([]Question, 0, 3)
-
-	// fmt.Println("Easy: ", len(easyQuestions))
-	// fmt.Println("Medium: ", len(mediumQuestions))
-	// fmt.Println("Hard: ", len(hardQuestions))
 
 	for i := 0; i < len(shuffledQuestion); i++ {
 		AddQuestionByDifficulty(shuffledQuestion[i])
 	}
-
-	fmt.Println("Easy: ", len(easyQuestions))
-	fmt.Println("Medium: ", len(mediumQuestions))
-	fmt.Println("Hard: ", len(hardQuestions))
-
-	// }
-
-	//easyQuestions = funk.Contains(allQuestions.Questions, "1")
+	SetupQuestionsForQuiz()
 }
 
 func shuffleQuestions(questions []Question) []Question {
@@ -111,7 +63,7 @@ func parseCommand(input string) {
 		printQuizStarted()
 		askQuestion()
 		break
-	case input == "":
+	case input == "a" || input == "b" || input == "c" || input == "d":
 		break
 	case input == "":
 		break
@@ -143,7 +95,12 @@ func parseCommand(input string) {
 }
 
 func askQuestion() {
+	currentLevel++
 
+	printAskQuestionTitle(currentLevel)
+	currentQuestion := questionCatalog[currentLevel]
+
+	printAskQuestion(currentQuestion)
 }
 
 func askForCommand() string {
