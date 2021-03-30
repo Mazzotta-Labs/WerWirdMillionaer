@@ -146,6 +146,10 @@ func checkAnswer(input string) {
 			askQuestion()
 			return
 		}
+
+		correctAnswer := funk.Find(currentQuestion.Answers, func(answer Answer) bool { return answer.Correct }).(Answer)
+
+		printWhichCorrectAnswer(correctAnswer)
 		printGoodLuckNextTime()
 		ShutDown()
 	}

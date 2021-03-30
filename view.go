@@ -82,6 +82,12 @@ func printGoodLuckNextTime() {
 	fmt.Println(string(colorReset))
 }
 
+func printWhichCorrectAnswer(answer Answer) {
+	fmt.Println(string(colorYellow), "Korrekte Antworte wäre gewesen: ")
+	fmt.Println(string(colorGreen), answer.Text)
+	fmt.Println(string(colorReset))
+}
+
 func print50ChanceJokerUsed() {
 	fmt.Println(string(colorGreen), "Der 50 / 50 Joker wurde eingesetzt!")
 	fmt.Println(string(colorReset))
