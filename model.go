@@ -1,6 +1,9 @@
 package main
 
-import "os"
+import (
+	"fmt"
+	"os"
+)
 
 var easyQuestions []Question
 var mediumQuestions []Question
@@ -51,5 +54,6 @@ func SetupQuestionsForQuiz() {
 
 func ShutDown() {
 	printExitQuiz()
+	fmt.Scanln()
 	os.Exit(0)
 }
