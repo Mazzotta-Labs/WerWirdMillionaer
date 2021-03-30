@@ -101,6 +101,8 @@ func parseCommand(input string) {
 		}
 		clearTerminal()
 		use50ChanceJoker50()
+	case "h":
+		printHelp()
 	case "q":
 		clearTerminal()
 		ShutDown()

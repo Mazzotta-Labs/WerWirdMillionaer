@@ -18,13 +18,19 @@ func printMenue() {
 ******* Willkommen bei WER WIRD MILLIONÄR? *******
 ******* Das Quiz besteht aus 10 Fragen ***********
 ******* Pro Quiz können 2 Joker gewählt werden ***
-**************************************************
+**************************************************`)
+	printHelp()
+}
+
+func printHelp() {
+	fmt.Println(string(colorBlue), `
 ********** Übersicht aller Commands **************
 s       : Quiz starten
 a,b,c,d : Antwort auswählen
 5       : 50/50 Joker auswählen (2 falsche Antworten werden ausgeblendet)
 r       : Retry Joker auswählen (Auf Nummer sicher gehen, bei falscher Antwort bekommt man noch eine Chance)
-q       : Quiz beenden`)
+q       : Quiz beenden
+h       : Hilfe aufrufen (Übersicht aller Commands)`)
 	fmt.Println(string(colorReset))
 }
 
