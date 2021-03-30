@@ -367,6 +367,98 @@
         }
       ],
       "difficulty": 3
+    },
+    {
+      "id": "17",
+      "question": "Lässt man sich auf eine Beziehung mit einer Schönheitskönigin ein, hat man sozusagen ...?",
+      "answers": [
+        {
+          "text": "ein Ungleich-Gewicht",
+          "correct": false
+        },
+        {
+          "text": "ein Über-Mass",
+          "correct": false
+        },
+        {
+          "text": "ein Miss-Verhältnis",
+          "correct": true
+        },
+        {
+          "text": "eine Schief-Lage",
+          "correct": false
+        }
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": "18",
+      "question": "Gesundheitsbewusste Strandurlauber sind auch beim ... ?",
+      "answers": [
+        {
+          "text": "Nünftig vernünftig",
+          "correct": false
+        },
+        {
+          "text": "Sonnen besonnen",
+          "correct": true
+        },
+        {
+          "text": "Sichtig umsichtig",
+          "correct": false
+        },
+        {
+          "text": "Sam achtsam",
+          "correct": false
+        }
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": "19",
+      "question": "Die Darstellung welcher Figur wurde schon zweimal mit einem Schauspiel-Oscar prämiert?",
+      "answers": [
+        {
+          "text": "Dr. Hannibal Lecter",
+          "correct": false
+        },
+        {
+          "text": "Forrest Gump",
+          "correct": false
+        },
+        {
+          "text": "Joker",
+          "correct": true
+        },
+        {
+          "text": "Truman Capote",
+          "correct": false
+        }
+      ],
+      "difficulty": 2
+    },
+    {
+      "id": "20",
+      "question": "Die klassische, genormte Europalette EPAL 1 besteht aus 78 Nägeln, neun Klötzen und insgesamt wie vielen Brettern?",
+      "answers": [
+        {
+          "text": "elf",
+          "correct": true
+        },
+        {
+          "text": "zehn",
+          "correct": false
+        },
+        {
+          "text": "zwölf",
+          "correct": false
+        },
+        {
+          "text": "neun",
+          "correct": false
+        }
+      ],
+      "difficulty": 3
     }
   ]
 }
